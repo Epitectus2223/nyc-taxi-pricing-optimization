@@ -1,4 +1,3 @@
-
 # NYC Yellow Taxi Pricing Optimization — Project Overview
 
 The goal of this project is to build a **pricing optimization framework** for NYC Yellow Taxi trips using **real TLC trip records (Jan–Mar 2023)**.  
