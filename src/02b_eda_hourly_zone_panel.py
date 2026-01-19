@@ -1,4 +1,3 @@
-# 02b_eda_hourly_zone_panel.py
 import pandas as pd
 import sqlite3
 import matplotlib.pyplot as plt
@@ -12,7 +11,6 @@ conn.close()
 
 panel["pickup_hour"] = pd.to_datetime(panel["pickup_hour"])
 
-# 1) Distribución avg_fare_per_mile
 plt.figure(figsize=(8,5))
 panel["avg_fare_per_mile"].plot(kind="hist", bins=60)
 plt.title("Distribución de avg_fare_per_mile (hora×zona)")
@@ -22,7 +20,6 @@ plt.tight_layout()
 plt.savefig("dist_avg_fare_per_mile.png", dpi=150)
 plt.close()
 
-# 2) Distribución trips
 plt.figure(figsize=(8,5))
 panel["trips"].plot(kind="hist", bins=60, log=True)
 plt.title("Distribución de trips (hora×zona) [escala log en Y]")
@@ -32,7 +29,6 @@ plt.tight_layout()
 plt.savefig("dist_trips_hour_zone.png", dpi=150)
 plt.close()
 
-# 3) Heatmap hora×día (global): suma de trips
 tmp = panel.groupby(["day_of_week","hour"])["trips"].sum().reset_index()
 pivot = tmp.pivot(index="day_of_week", columns="hour", values="trips")
 
@@ -48,7 +44,6 @@ plt.tight_layout()
 plt.savefig("heatmap_trips_dow_hour.png", dpi=150)
 plt.close()
 
-# 4) Top zonas por volumen
 top_zones = panel.groupby("PULocationID")["trips"].sum().sort_values(ascending=False).head(15)
 plt.figure(figsize=(10,5))
 top_zones.sort_values().plot(kind="barh")
@@ -60,4 +55,5 @@ plt.savefig("top_zones_by_trips.png", dpi=150)
 plt.close()
 
 print("Gráficos guardados: dist_avg_fare_per_mile.png, dist_trips_hour_zone.png, heatmap_trips_dow_hour.png, top_zones_by_trips.png")
+
 
