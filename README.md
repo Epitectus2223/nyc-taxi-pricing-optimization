@@ -120,7 +120,7 @@ A 4-page Power BI report is built from the exported CSV artifacts:
 3) Hourly Operations (heatmaps, patterns by rush/non-rush)
 4) Methodology & Robustness (segment assumptions, scenario curves)
 
-![Dashboard](figures/dashboard_pricing.png)
+![Dashboard](reports/figures/dashboard_pricing.png)
 
 Taxi zone lookup and shapefile are available from TLC-linked resources. [3](https://data.cityofnewyork.us/Transportation/Taxis-in-NYC/tvge-c4vh), [2](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)  
 
