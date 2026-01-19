@@ -120,7 +120,9 @@ A 4-page Power BI report is built from the exported CSV artifacts:
 3) Hourly Operations (heatmaps, patterns by rush/non-rush)
 4) Methodology & Robustness (segment assumptions, scenario curves)
 
-Taxi zone lookup and shapefile are available from TLC-linked resources. [3](https://data.cityofnewyork.us/Transportation/Taxis-in-NYC/tvge-c4vh)[2](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)  
+![Dashboard](figures/dashboard_pricing.png)
+
+Taxi zone lookup and shapefile are available from TLC-linked resources. [3](https://data.cityofnewyork.us/Transportation/Taxis-in-NYC/tvge-c4vh), [2](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)  
 
 ---
 
@@ -137,12 +139,16 @@ Taxi zone lookup and shapefile are available from TLC-linked resources. [3](http
    - `03d_sparse_poisson_zonehour.py`
    - `04_optimize_pricing_policy_segmented.py`
 
-3) Open Power BI Desktop and follow the setup guide:
-   - import the CSV outputs
-   - build relationships
-   - create measures
-   - build the 4 dashboard pages
-
 ---
 
-## Repository Structure (Suggested)
+## Limitations & Next Steps
+- Observed price is partially endogenous (traffic, composition, market conditions).
+- No direct A/B test or causal identification in this offline study.
+- Next steps:
+  - incorporate weather/events proxies
+  - capacity constraints / wait time proxy
+  - zone-level elasticity learning with shrinkage
+  - simulation backtesting over multiple months
+
+
+
