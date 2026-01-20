@@ -150,5 +150,6 @@ Taxi zone lookup and shapefile are available from TLC-linked resources. [3](http
   - zone-level elasticity learning with shrinkage
   - simulation backtesting over multiple months
 
-
+## Author
+M. Osvaldo Hernández Montoya
 
